@@ -32,7 +32,10 @@ public class Validate {
          try{
             data.put(101010, 20202);
             data.put(102030, 22222);
-
+            data.put(12345, 12345);
+            System.out.println("================");
+            System.out.println("=   GROUP - 3  =");
+            System.out.println("================");
             System.out.println("Welcome to the ATM Project");
              System.out.println("Enter your customer number");
               setCustomerNumber(menuInput.nextInt());

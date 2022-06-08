@@ -3,7 +3,11 @@ import java.util.Scanner;
 
 public class ABC_ATM {
     public static int twoThousands, fiveHundreds, twoHundreds, hundreds, fifties, withdraw_amount = 0;
-    public static int totalAmount;
+    public static int totalAmount = 0;
+    public static int rem_2000s= 0 , rem_500s = 0, rem_200s = 0, rem_100s = 0;
+    public static int total_2000s = 0, total_500s = 0,total_200s = 0 ,total_100s = 0;
+    public static int no_2000s = 0, no_500s = 0, no_200s = 0, no_100s = 0;
+
     static Scanner sc = new Scanner(System.in);
 
     public static void depositeAmount() {
@@ -21,10 +25,10 @@ public class ABC_ATM {
         } else if (twoThousands == 0 && fiveHundreds == 0 && twoHundreds == 0 && hundreds == 0) {
             System.out.println("Deposit amount cannot be zero");
         } else {
-            int total_2000s = twoThousands * 2000;
-            int total_500s = fiveHundreds * 500;
-            int total_200s = twoHundreds * 200;
-            int total_100s = hundreds * 100;
+             total_2000s = twoThousands * 2000;
+             total_500s = fiveHundreds * 500;
+             total_200s = twoHundreds * 200;
+             total_100s = hundreds * 100;
             totalAmount = total_2000s + total_500s + total_200s + total_100s;
 
             System.out.println("Balance: 2000s=" + twoThousands + ", 500s=" + fiveHundreds + ", 200s=" + twoHundreds
@@ -38,7 +42,6 @@ public class ABC_ATM {
     }
 
     public static void withdrawAmount() {
-        int no_2000s = 0, no_500s = 0, no_200s = 0, no_100s = 0;
 
         System.out.println("Please enter the amount to withdraw!");
         withdraw_amount = sc.nextInt();
@@ -63,10 +66,10 @@ public class ABC_ATM {
                 withdraw_amount %= 100;
             }
 
-            int rem_2000s = twoThousands - no_2000s;
-            int rem_500s = fiveHundreds - no_500s;
-            int rem_200s = twoHundreds - no_200s;
-            int rem_100s = hundreds - no_100s;
+             rem_2000s = twoThousands - no_2000s;
+             rem_500s = fiveHundreds - no_500s;
+             rem_200s = twoHundreds - no_200s;
+             rem_100s = hundreds - no_100s;
 
             if(no_2000s == 0){
                 if(no_500s == 0){
@@ -87,7 +90,7 @@ public class ABC_ATM {
             }else{
                 System.out.println("Dispensed: 2000s= " + no_2000s + ", 500s= " + no_500s + ", 200s= " + no_200s + ", 100s= "+no_100s);
             }
-           
+            
             System.out.println("Balance: 2000s=" + rem_2000s + ", 500s=" + rem_500s + ", 200s=" + rem_200s + ", 100s="
                     + rem_100s + ", Total=" + rem_amount);
             totalAmount = rem_amount;
@@ -125,7 +128,6 @@ public class ABC_ATM {
     }
 
     public static void main(String[] args) {
-
         select();
         }
 }
